@@ -44,23 +44,28 @@
 	if(!empty($_POST['save'])){
 	    $alo_options['alo-key'] = $_POST['alo-key'];
 	    update_option('alo_options', $alo_options);
-	    echo '<div id="message" class="updated fade"><p>Settings updated</p></div>';
+	    echo '<div id="message" class="updated fade"><p>Lưu thành công!</p></div>';
 	}
 	auto_script();
 	$alo_options = get_option('alo_options');
 
-		echo "Var_dump key: " ;
-		echo "<pre>";
-		var_dump($alo_options);
-		echo "</pre>";
+		// echo "Var_dump key: " ;
+		// echo "<pre>";
+		// var_dump($alo_options);
+		// echo "</pre>";
 
 ?>
-	<br>
-	<label for="alo-key"> KEY </label> 
-	<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
-	    <input type="text" name="alo-key" value="<?php echo $alo_options['alo-key']?>">
-	    <input type="submit" value="save" name="save">
-	</form>
+		<br>
+	<div style="text-align: center; margin: 50px auto">
+		<label for="alo-key"> Nhập key cung cấp bới <i><span style="font-size: 20px; color: #e8627a">thuengay.vn</h3></span> ở đây </label> 
+		<br>
+		<br>
+
+		<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+		    <input type="text" name="alo-key" value="<?php echo $alo_options['alo-key']?>" style="width: 420px">
+		    <input type="submit" value="LƯU" name="save" style="border: 1px #a1a1a1 solid;border-radius: 10px;width: 70px;background-color: #dddddd;">
+		</form>
+	</div>
 <?php
 	
     }
